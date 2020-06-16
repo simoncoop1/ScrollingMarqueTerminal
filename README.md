@@ -2,8 +2,16 @@
   
   
 scrolling-marque - Scrolling Marque in Terminal(Linux)
+
+## Example
+basic:
+> python3 scrolling-marque.py "Hello"
+
+bonce the text of screen edge:
+> python3 scrolling-marque.py "Hello" --bounce
   
-  
+## Commandline arguments
+
 **positional arguments:**  
 message &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; what is the message for the scrolling marque
   
