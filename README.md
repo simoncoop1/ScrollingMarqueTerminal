@@ -19,3 +19,5 @@ message &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; what is the message for the scrolling mar
 **optional arguments:**  
   -h, --help &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  show this help message and exit
   --bounce &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    should the scrolling marque bounce
+  --faster &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    the effect is fast
+  --slower &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    the effect is slow
