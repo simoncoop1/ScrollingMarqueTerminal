@@ -17,7 +17,19 @@ parser.add_argument('message',nargs=1,
 parser.add_argument('--bounce', dest='bounce', action='store_true',
                help='should the scrolling marque bounce')
 
+parser.add_argument('--faster', dest='faster', action='store_true',
+               help='the effect is fast')
+parser.add_argument('--slower', dest='slower', action='store_true',
+               help='the effect is slow')
+
 args = parser.parse_args()
+
+interval = 0.040
+if args.faster:
+    interval = 0.030
+elif args.slower:
+    interval = 0.050    
+
 #print(args)
 
 def main(stdscr):
@@ -31,7 +43,7 @@ def main(stdscr):
     timeac = 0
     now1=time.time()
     startt = now1
-    interval=0.033
+    #interval=0.033
     acc = 9.8 #m/s^2
     whgt=2205
 
@@ -57,7 +69,8 @@ def main(stdscr):
         time2=time.time()
         sleepm = interval-(time2-now1)
         stdscr.addstr(0,0,'sleeping {}'.format(sleepm))
-        sleep(0.1)
+        #sleep(0.1)
+        sleep(sleepm)
         now1=time.time()
 
         x+=1
