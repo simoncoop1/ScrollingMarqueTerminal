@@ -9,6 +9,9 @@ basic:
 
 bonce the text of screen edge:
 > python3 scrolling-marque.py "Hello" --bounce
+
+vertical movement:
+> python3 scrolling-marque.py "Hello" --vertical
   
 ## Commandline arguments
 
