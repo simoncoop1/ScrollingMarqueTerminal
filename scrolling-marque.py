@@ -21,6 +21,8 @@ parser.add_argument('--faster', dest='faster', action='store_true',
                help='the effect is fast')
 parser.add_argument('--slower', dest='slower', action='store_true',
                help='the effect is slow')
+parser.add_argument('--vertical', dest='vertical', action='store_true',
+               help='additionally move vertical')
 
 args = parser.parse_args()
 
@@ -73,8 +75,12 @@ def main(stdscr):
         sleep(sleepm)
         now1=time.time()
 
-        x+=1
-        x=x%sW
+        if args.vertical:
+            y+=1
+            y=y%sH            
+        else:
+            x+=1
+            x=x%sW
 
         stdscr.clear()
 
@@ -92,7 +98,6 @@ def main(stdscr):
             else:
                 stdscr.addstr(y,x, '{}'.format(msg))
         else:
-            ##wrap arround
             if((len(msg)+x)>sW):
                   l1 = (len(msg)+x)%sW
                   stdscr.addstr(y,0, '{}'.format(msg[(l1*-1):]))
