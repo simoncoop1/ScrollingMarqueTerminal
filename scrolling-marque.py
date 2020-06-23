@@ -57,14 +57,14 @@ def main(stdscr):
     ticks = 1
     blockLenth = len(msg)
     sW = stdscr.getmaxyx()[1] - 1 #reduce width by 1 to stop potential bug
-    sH = stdscr.getmaxyx()[0]
+    sH = stdscr.getmaxyx()[0] -1 #reduce by 1 to stop bug
 
     x = randint(0, sW)
     y = randint(0, sH)
     
-
-
     stdscr.addstr(y,x, '{}'.format(msg))
+    #print(e,y,x, file=open("tmp.txt", "a")) append print statement to a file
+                    
     stdscr.refresh()
 
     while(True):
@@ -104,6 +104,8 @@ def main(stdscr):
                   stdscr.addstr(y,x, '{}'.format(msg[l1:]))
             else:
                 stdscr.addstr(y,x, '{}'.format(msg))                       
+
+
 
         stdscr.refresh()
         
